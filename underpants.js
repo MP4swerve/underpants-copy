@@ -84,7 +84,7 @@ _.first = function(array, number){
     if(!Array.isArray(array) || number < 0){
         return [];
     };
-    if(number === 'number'){
+    if(typeof number === 'number'){
         return array.slice(0, number);
     };
     if(typeof number !== 'number'){
