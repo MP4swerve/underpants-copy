@@ -44,8 +44,8 @@ _.identity = function(value){
 * _.typeOf([1,2,3]) -> "array"
 */
 _.typeOf = function(value){
-    if(typeof value === 'string'){
-        return 'string';
+    if(typeof value === 'undefined'){
+        return 'undefined';
     } else if(typeof value === 'number'){
         return 'number';
     } else if(typeof value === 'boolean'){
@@ -59,7 +59,7 @@ _.typeOf = function(value){
     } else if(typeof value === 'function'){
         return 'function';
     } else {
-        return 'null'
+        return null;
     }
 } 
 
