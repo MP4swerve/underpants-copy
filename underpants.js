@@ -44,22 +44,22 @@ _.identity = function(value){
 * _.typeOf([1,2,3]) -> "array"
 */
 _.typeOf = function(value){
-    if(typeof value === 'undefined'){
-        return 'undefined';
+    if(typeof value === 'string'){
+        return 'string';
     } else if(typeof value === 'number'){
         return 'number';
     } else if(typeof value === 'boolean'){
         return 'boolean';
     } else if(Array.isArray(value)){
         return 'array';
-    } else if(typeof value === 'object'){
-        return 'object';
+    } else if(value === null){
+        return 'null';
     } else if(typeof value === 'undefined'){
         return 'undefined';
     } else if(typeof value === 'function'){
         return 'function';
     } else {
-        return null;
+        return 'object';
     }
 } 
 
