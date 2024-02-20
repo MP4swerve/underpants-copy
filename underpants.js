@@ -83,14 +83,16 @@ _.typeOf = function(value){
 _.first = function(array, number){
     if(!Array.isArray(array) || number < 0){
         return [];
-    }
+    };
+    if(number === 'number'){
+        return array.slice(0, number);
+    };
     if(typeof number !== 'number'){
         return array[0];
-    }
+    };
     if(number > 0){
         return array;
-    }
-    return array.slice(0, number);
+    };
 }
 
 /** _.last
