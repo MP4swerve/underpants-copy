@@ -143,16 +143,10 @@ _.last = function(array, number){
 _.indexOf = function(array, value){
     for(var i = 0; i < array.length; i++){
         if(array[i] === value){
-            return array.indexOf(array[i]);
-        }
-        if(array[i].concat(value) === value){
             return i;
         }
-        if(array[i] !== value){
-            return -1;
-        }
-        
     }
+    return -1;
 }
 
 
