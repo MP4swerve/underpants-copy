@@ -112,7 +112,18 @@ _.first = function(array, number){
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+_.last = function(array, number){
+    if(!Array.isArray(array) || number < 0){
+        return [];
+    }
+    if(typeof number !== 'number'){
+        return array[array.length - 1];
+    }
+    if(typeof number === 'number'){
+        var num = -number
+        return array.slice(num)
+    }
+}
 
 /** _.indexOf
 * Arguments:
@@ -129,6 +140,20 @@ _.first = function(array, number){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
+_.indexOf = function(array, value){
+    for(var i = 0; i < array.length; i++){
+        if(array[i] === value){
+            return array.indexOf(array[i]);
+        }
+        if(array[i].concat(value) === value){
+            return i;
+        }
+        if(array[i] !== value){
+            return -1;
+        }
+        
+    }
+}
 
 
 /** _.contains
@@ -176,7 +201,10 @@ _.each = function(collection, func){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
+_.unique = function(array){
+    var empty = [];
 
+}
 
 /** _.filter
 * Arguments:
