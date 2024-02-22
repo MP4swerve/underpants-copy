@@ -167,10 +167,10 @@ _.indexOf = function(array, value){
 _.contains = function (array, value){
     for(var i = 0; i < array.length; i++){
         if(array[i] === value){
-            return true
+            return true;
         }
-        return false;
     }
+    return false;
 }
 
 /** _.each
