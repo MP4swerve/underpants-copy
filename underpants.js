@@ -164,7 +164,14 @@ _.indexOf = function(array, value){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+_.contains = function (array, value){
+    for(var i = 0; i < array.length; i++){
+        if(array[i] === value){
+            return true
+        }
+    }
+    return false;
+}
 
 /** _.each
 * Arguments:
