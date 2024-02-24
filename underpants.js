@@ -192,16 +192,14 @@ _.contains = function (array, value){
 _.each = function(collection, func){
     if(Array.isArray(collection)){
         for(var i = 0; i < collection.length; i++){
-            const result = func(collection[i], i, collection){
+            const result = func(collection[i], i, collection);
                 return result;
-            }
         }
     }
     if(typeof collection === 'object'){
         for(var key in collection){
-            const result = func(collection[key], key, collection){
+            const result = func(collection[key], key, collection);
                 return result;
-            }
         }
     }
 }
