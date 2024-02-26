@@ -240,7 +240,7 @@ _.filter = function(array, func){
     var filteredArr = [];
     _.each(array, function(element, index, array){
         if(func(element, index, array)){
-            filteredArr.push(element)
+            filteredArr.push(element);
         }
     });
     return filteredArr;
@@ -258,6 +258,14 @@ _.filter = function(array, func){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+_.reject = function(array, func){
+    var blockedArr = [];
+    _.each(array, function(element, index, array){
+        if(!func(element, index, array)){
+            blockedArr.push(element);
+        }
+    })
+}
 
 
 /** _.partition
@@ -278,7 +286,7 @@ _.filter = function(array, func){
 *   }); -> [[2,4],[1,3,5]]
 }
 */
-
+ 
 
 /** _.map
 * Arguments:
