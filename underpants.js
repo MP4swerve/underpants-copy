@@ -364,7 +364,37 @@ _.pluck = function(array, property){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
-
+_.every = function(collection, func){
+    if(Array.isArray(collection)){
+        if(typeof func !== 'function'){
+            for(var i = 0; i < collection.length; i++){
+                if(!collection[i]){
+                    return false;
+                }
+            }
+        } else {
+            for(var i = 0; i < collection.length; i++){
+                if(func(collection[i], i, collection) === false){
+                    return false;
+                }
+            }
+        }
+    } else {
+        if(typeof func !== 'function'){
+            for(var key in collection){
+                if(!collection[key]){
+                    return false;
+                }
+            }
+        } else{
+            for(var key in collection){
+                if(func(collection[key], key, collection) === false){
+                    return false;
+                }
+            }
+        }
+    }
+}
 
 /** _.some
 * Arguments:
