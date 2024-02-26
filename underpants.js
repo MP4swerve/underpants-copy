@@ -238,11 +238,11 @@ _.unique = function(array){
 */
 _.filter = function(array, func){
     var filteredArr = [];
-    _.each(array, fucntion(element, index, array)) {
-        if(func(element, index, array) === true){
+    _.each(array, fucntion(element, index, array){
+        if(func(element, index, array)){
             filteredArr.push(element)
         }
-    }
+    });
     return filteredArr;
 }
 
