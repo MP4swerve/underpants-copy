@@ -341,7 +341,7 @@ _.map = function(collection, func){
 _.pluck = function(array, property){
     var pluckers = [];
     _.map(array, function(value, index, array){
-        pluckers.push(value)
+        pluckers.push(value, index, array)
     })
     return pluckers;
 }
