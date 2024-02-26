@@ -287,7 +287,17 @@ _.reject = function(array, func){
 *   }); -> [[2,4],[1,3,5]]
 }
 */
- 
+_.partition = function(array, func){
+    var output = [[], []];
+    _.each(array, function(element, key, array){
+        if(func(element, key, array)){
+            output[0].push(element);
+        } else{
+            output[1].push(element)
+        }
+    })
+    return output;
+}
 
 /** _.map
 * Arguments:
