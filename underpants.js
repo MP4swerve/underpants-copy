@@ -318,15 +318,11 @@ _.map = function(collection, func){
     var values = [];
     if(Array.isArray(collection)){
         _.each(collection, function(element, index, collection){
-            if(func(element, index, collection)){
-                values.push(element);
-            }
+           values.push(func(element, index, collection));
         })
     } else{
         _.each(collection, function(values, key, collection){
-            if(func(values, key, collection)){
-                values.push(values[key]);
-            }
+            values.push(values, key, collection);
         })
     }
     return values;
