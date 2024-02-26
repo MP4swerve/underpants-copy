@@ -237,12 +237,13 @@ _.unique = function(array){
 *   use _.each in your implementation
 */
 _.filter = function(array, func){
-    var arr = [];
-    for(var i = 0; i < array.length; i++){
-        if(func(array[i], i, array) === true){
-            arr.push(array[i])
+    var filteredArr = [];
+    _.each(array, fucntion(element, index, array)) {
+        if(func(element, index, array) === true){
+            filteredArr.push(element)
         }
     }
+    return filteredArr;
 }
 
 /** _.reject
