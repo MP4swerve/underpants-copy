@@ -417,7 +417,38 @@ _.every = function(collection, func){
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-
+_.some = function(collection, func){
+    if(Array.isArray(collection)){
+        if(typeof func !== 'function'){
+            for(var i = 0; i < collection.length; i++){
+                if(collection[i]){
+                    return true;
+                }
+            }
+        } else {
+            for(var i = 0; i < collection.length; i++){
+                if(func(collection[i], i, collection) === true){
+                    return true;
+                }
+            }
+        }
+    } else {
+        if(typeof func !== 'function'){
+            for(var key in collection){
+                if(collection[key]){
+                    return true;
+                }
+            }
+        } else{
+            for(var key in collection){
+                if(func(collection[key], key, collection) === true){
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
 
 /** _.reduce
 * Arguments:
