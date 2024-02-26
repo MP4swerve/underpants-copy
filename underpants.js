@@ -339,11 +339,9 @@ _.map = function(collection, func){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 _.pluck = function(array, property){
-    var pluckers = [];
-    _.map(array, function(value, index, array){
-        pluckers.push(value, index, array)
-    })
-    return pluckers;
+    return _.map(array, function(obj){
+        return obj[property];
+    });
 }
 
 /** _.every
