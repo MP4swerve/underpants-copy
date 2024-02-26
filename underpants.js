@@ -394,6 +394,7 @@ _.every = function(collection, func){
             }
         }
     }
+    return true;
 }
 
 /** _.some
