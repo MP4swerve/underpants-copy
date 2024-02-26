@@ -321,8 +321,8 @@ _.map = function(collection, func){
            values.push(func(element, index, collection));
         })
     } else{
-        _.each(collection, function(values, key, collection){
-            values.push(values, key, collection);
+        _.each(collection, function(value, key, collection){
+            values.push(value, key, collection);
         })
     }
     return values;
