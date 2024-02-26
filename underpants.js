@@ -340,8 +340,8 @@ _.map = function(collection, func){
 */
 _.pluck = function(array, property){
     var pluckers = [];
-    _.map(array, function(value, key, array){
-        pluckers.push(func(value, key, array))
+    _.map(array, function(value, index, array){
+        pluckers.push(value)
     })
     return pluckers;
 }
