@@ -214,7 +214,7 @@ _.each = function(collection, func){
 _.unique = function(array){
     var empty = [];
     for(var i = 0; i < array.length; i++){
-        if(empty.indexOf(array[i] === -1)){
+        if(empty.indexOf(array[i]) === -1){
             empty.push(array[i])
         }
     }
