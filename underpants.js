@@ -193,7 +193,7 @@ _.each = function(collection, func){
     if(Array.isArray(collection)){
         for(var i = 0; i < collection.length; i++){
             if(func(collection[i], i, collection) === true){
-                return collection[i];
+                return collection;
             }
         }
     }
