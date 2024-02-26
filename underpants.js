@@ -492,7 +492,7 @@ _.reduce = function(array, func, seed) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 _.extend = function(object1, object2, ...objects){
-    return Object.assign(object1, object2, ...objects)
+    return Object.assign(object1, object2, ...objects);
 }
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
