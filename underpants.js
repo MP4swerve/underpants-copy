@@ -314,7 +314,23 @@ _.partition = function(array, func){
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
+_.map = function(collection, func){
+    var values = [];
+    if(Array.isArray(collection)){
+        _.each(collection, function(element, index, collection){
+            if(func(element, index, collection)){
+                values.push(element);
+            }
+        })
+    } else{
+        _.each(collection, function(values, key, collection){
+            if(func(values, key, collection)){
+                values.push(values[key]);
+            }
+        })
+    }
+    return values;
+}
 
 /** _.pluck
 * Arguments:
