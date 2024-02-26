@@ -261,7 +261,7 @@ _.filter = function(array, func){
 _.reject = function(array, func){
     var blockedArr = [];
     _.each(array, function(element, index, array){
-        if(func(element, index, array)){
+        if(!func(element, index, array)){
             blockedArr.push(element);
         }
     })
