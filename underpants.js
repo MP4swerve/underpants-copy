@@ -320,9 +320,9 @@ _.map = function(collection, func){
         _.each(collection, function(element, index, collection){
            values.push(func(element, index, collection));
         })
-    } else{
+    } else {
         _.each(collection, function(value, key, collection){
-            values.push(value, key, collection);
+            values.push(func(value, key, collection));
         })
     }
     return values;
