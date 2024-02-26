@@ -192,20 +192,16 @@ _.contains = function (array, value){
 _.each = function(collection, func){
     if(Array.isArray(collection)){
         for(var i = 0; i < collection.length; i++){
-            if(func(collection[i], i, collection) === true){
-                return collection;
+            func(collection[i], i, collection)
+            }
+    } else if(typeof collection === 'object'){
+         for(var key in collection){
+            if(collection.hasOwnProperty(key)){
+                func(collection[key], key, collection)
             }
         }
     }
-    if(typeof collection === 'object'){
-        for(var key in collection){
-            if(func(collection[key], key, collection) === true){
-                return collection[key]
-            }
-        }
-    }
-}
-
+} 
 /** _.unique
 * Arguments:
 *   1) An array
